@@ -1,0 +1,19 @@
+{
+  "name": "analytics_coffeedust_io",
+  "version": "0.0.1",
+  "description": "keeps track of stuff and things for coffeedust.io",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Coffee-Dust/analytics-coffeedust-io.git"
+  },
+  "author": "coffeedust",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Coffee-Dust/analytics-coffeedust-io/issues"
+  },
+  "homepage": "https://github.com/Coffee-Dust/analytics-coffeedust-io#readme"
+}
