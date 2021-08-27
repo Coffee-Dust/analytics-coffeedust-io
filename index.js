@@ -6,6 +6,8 @@ const port = 420
 app.use(express.json());
 
 app.get('/', (req, res) => {
+  res.redirect("https://coffeedust.io/")
+})
 
 })
 
