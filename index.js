@@ -3,6 +3,7 @@ import ReportController from "./controllers/report-controller.js"
 
 const app = express()
 const port = 420
+app.use(express.json());
 
 app.get('/', (req, res) => {
 
