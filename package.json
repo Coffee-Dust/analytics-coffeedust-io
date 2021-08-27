@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "keeps track of stuff and things for coffeedust.io",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "test"
   },
