@@ -1,4 +1,6 @@
 import express from 'express'
+import ReportController from "./controllers/report-controller.js"
+
 const app = express()
 const port = 420
 
