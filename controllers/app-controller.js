@@ -6,14 +6,15 @@ class AppController {
     this.params = req.body
     this.response = res
 
-    try {
+    if (this[action] !== undefined) {
       this[action]()
-    } catch (error) {
+    } else {
       this.response.status = 404
       this.response.send({error: "Invalid Action"})
       throw Error("InvalidActionForController> Action not defined/not found")
     }
   }
+
 }
 
 export default AppController
