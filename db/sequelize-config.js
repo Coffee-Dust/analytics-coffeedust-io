@@ -16,5 +16,45 @@ try {
 
 //Define model schema:
 
+Report.init({
+  // Model attributes are defined here
+  eventType: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  eventDetails: {
+    type: DataTypes.STRING,
+    get(){JSON.parse(this.getDataValue('value'))},
+    set(value){this.setDataValue('value', JSON.stringify(value))}
+  },
+  ip: {
+    type: DataTypes.STRING,
+    allowNull: true
+  },
+  city: {
+    type: DataTypes.STRING,
+    allowNull: true
+  },
+  region: {
+    type: DataTypes.STRING,
+    allowNull: true
+  },
+  country: {
+    type: DataTypes.STRING,
+    allowNull: true
+  },
+  countryName: {
+    type: DataTypes.STRING,
+    allowNull: true
+  }
+
+}, 
+{
+  // Other model options go here
+  sequelize,
+  timestamps: true,
+  updatedAt: false,
+  modelName: 'Report'
+});
 
 sequelize.sync();
