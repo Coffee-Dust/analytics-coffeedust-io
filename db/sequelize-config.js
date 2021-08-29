@@ -1,5 +1,5 @@
 import sqlize from "sequelize";
-
+import Report from "../models/report.js";
 const {Sequelize, DataTypes} = sqlize;
 
 const sequelize = new Sequelize({
