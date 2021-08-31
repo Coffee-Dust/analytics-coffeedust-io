@@ -1,4 +1,5 @@
 import express from 'express'
+import './db/sequelize-config.js'
 import ReportController from "./controllers/report-controller.js"
 
 const app = express()
