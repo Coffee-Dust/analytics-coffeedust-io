@@ -9,6 +9,8 @@ app.get('/', (req, res) => {
   res.redirect("https://coffeedust.io/")
 })
 
+app.post('/report', (req, res) => {
+  new ReportController(req, res, "create")
 })
 
 app.listen(port, () => {
