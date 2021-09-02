@@ -25,7 +25,7 @@ Report.init({
   eventDetails: {
     type: DataTypes.STRING,
     get(){JSON.parse(this.getDataValue('value'))},
-    set(value){this.setDataValue('value', JSON.stringify(value))}
+    set(value){this.setDataValue('eventDetails', JSON.stringify(value))}
   },
   ip: {
     type: DataTypes.STRING,
