@@ -1,3 +1,4 @@
+import Report from "../models/report.js"
 import AppController from "./app-controller.js"
 
 class ReportController extends AppController {
