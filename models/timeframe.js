@@ -1,0 +1,7 @@
+class Timeframe {
+  
+  constructor(timeframeKeyword) {
+
+  }
+
+}
