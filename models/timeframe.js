@@ -14,6 +14,14 @@ class Timeframe {
     this._from = new Date(dateTime)
   }
 
+  get to() {
+    return this._to
+  }
+
+  set to(dateTime) {
+    this._to = new Date(dateTime)
+  }
+
 }
 
 export default Timeframe
