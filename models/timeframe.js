@@ -15,3 +15,5 @@ class Timeframe {
   }
 
 }
+
+export default Timeframe
