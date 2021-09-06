@@ -6,3 +6,4 @@ class ReportCollection {
 
 
 }
+export default ReportCollection
