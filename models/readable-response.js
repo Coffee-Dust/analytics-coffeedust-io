@@ -2,6 +2,10 @@ import ReportCollection from "./report-collection.js";
 
 class ReadableResponse {
 
+  summary() {
+
+  }
+
   static async generateForFormat(format, timeframe) {
     const rr = new this(format, timeframe)
     await rr.reports.calcStatData()
