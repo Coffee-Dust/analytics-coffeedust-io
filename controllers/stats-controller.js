@@ -1,5 +1,6 @@
 import AppController from "./app-controller.js"
 import ReadableResponse from "../models/readable-response.js"
+import Timeframe from "../models/timeframe.js"
 
 class StatsController extends AppController {
 
