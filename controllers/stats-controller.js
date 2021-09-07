@@ -1,4 +1,5 @@
 import AppController from "./app-controller.js"
+import ReadableResponse from "../models/readable-response.js"
 
 class StatsController extends AppController {
 
