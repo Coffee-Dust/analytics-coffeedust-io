@@ -65,3 +65,5 @@ Report.init({
 });
 
 sequelize.sync();
+
+export default sequelize;
