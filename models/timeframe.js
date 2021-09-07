@@ -22,7 +22,7 @@ class Timeframe {
   }
 
   get to() {
-    return this._to
+    return moment(this._to).format('YYYY-MM-DD HH:mm')
   }
 
   set to(dateTime) {
