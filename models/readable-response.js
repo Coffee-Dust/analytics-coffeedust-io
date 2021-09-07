@@ -1,3 +1,4 @@
+import ReportCollection from "./report-collection.js";
 
 class ReadableResponse {
 
