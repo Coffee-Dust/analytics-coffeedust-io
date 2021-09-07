@@ -1,3 +1,5 @@
+import sequelize from "../db/sequelize-config.js";
+
 class ReportCollection {
 
   constructor(timeframe) {
