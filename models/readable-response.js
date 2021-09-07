@@ -2,6 +2,16 @@ import ReportCollection from "./report-collection.js";
 
 class ReadableResponse {
 
+  static async generateForFormat(format, timeframe) {
+    const rr = new this(format, timeframe)
+    await rr.reports.calcStatData()
+
+    if (typeof rr[rr.format] === 'function') {
+      return rr[rr.format]()
+    } else {
+      throw new Error("<UnknownReadableResponseFormatRequested> Invalid/Unknown dataFormat. Check spelling and make sure it's in camelCase.")
+    }
+  }
 
   constructor(format, timeframe) {
     this.format = format
