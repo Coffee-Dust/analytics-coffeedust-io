@@ -8,7 +8,7 @@ class ReadableResponse {
 
   static async generateForFormat(format, timeframe) {
     const rr = new this(format, timeframe)
-    await rr.reports.calcStatData()
+    await rr.reports.runQueryStatisticDataMethods()
 
     if (typeof rr[rr.format] === 'function') {
       return rr[rr.format]()
