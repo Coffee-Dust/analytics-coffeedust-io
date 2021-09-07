@@ -54,6 +54,11 @@ Report.init({
 }, 
 {
   // Other model options go here
+  hooks: {
+    beforeSave: (report, _)=> {
+      report.createdAt = Date.now()
+    }
+  },
   sequelize,
   timestamps: false,
   modelName: 'Report'
