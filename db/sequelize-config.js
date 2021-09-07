@@ -46,7 +46,10 @@ Report.init({
   countryName: {
     type: DataTypes.STRING,
     allowNull: true
-  }
+  },
+  createdAt: {
+    type: DataTypes.DATE
+  },
 
 }, 
 {
