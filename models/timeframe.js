@@ -14,7 +14,7 @@ class Timeframe {
   }
 
   get from() {
-    return this._from
+    return moment(this._from).format('YYYY-MM-DD HH:mm')
   }
 
   set from(dateTime) {
