@@ -52,8 +52,7 @@ Report.init({
 {
   // Other model options go here
   sequelize,
-  timestamps: true,
-  updatedAt: false,
+  timestamps: false,
   modelName: 'Report'
 });
 
