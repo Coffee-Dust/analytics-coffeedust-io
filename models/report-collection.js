@@ -6,7 +6,7 @@ class ReportCollection {
   async queryUniqueVisitsAndInteractionCount() {
     const [data, _] = await sequelize.query(`
     SELECT ip, COUNT(eventType) as 'interactionCount' FROM 'Reports' 
-    WHERE createdAt BETWEEN '${this.timeframe.from}' AND '${this.timeframe.to}' 
+    ${this.timeframe.sqlQuery()} 
     GROUP BY ip;`)
 
     this.uniqueVisits = data.length
