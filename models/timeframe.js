@@ -13,6 +13,10 @@ class Timeframe {
     }
   }
 
+  sqlQuery(DoesNotIncludeSemiColonAtTheEnd=null) {
+    return `WHERE createdAt BETWEEN '${this.from}' AND '${this.to}'`
+  }
+
   get from() {
     return moment(this._from).format('YYYY-MM-DD HH:mm')
   }
