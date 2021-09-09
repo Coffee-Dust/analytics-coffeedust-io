@@ -5,6 +5,11 @@ import './db/sequelize-config.js'
 import ReportController from "./controllers/report-controller.js"
 import StatsController from './controllers/stats-controller.js'
 
+const httpsOptions = {
+  key: fs.readFileSync(process.env["DEMO_SERVER_SSL_KEY"]),
+  cert: fs.readFileSync(process.env["DEMO_SERVER_SSL_CRT"])
+};
+
 const app = express()
 const port = 420
 app.use(express.json());
