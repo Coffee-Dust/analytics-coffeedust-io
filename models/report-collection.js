@@ -43,7 +43,17 @@ class ReportCollection {
   }
 
   async queryDemoStatistics() {
+    const [startedDemos, _] = await sequelize.query(`
+    SELECT id, eventDetails FROM 'Reports'
+    ${this.timeframe.sqlQuery()} 
+    AND eventType = 'projectDemoStart';`);
+    this.demos.totalStarts = startedDemos.length
 
+    const [visitedDemos, _sql] = await sequelize.query(`
+    SELECT id, eventDetails FROM 'Reports'
+    ${this.timeframe.sqlQuery()} 
+    AND eventType = 'projectDemoVisit';`);
+    this.demos.totalVisits = visitedDemos.length
   }
 
 
