@@ -70,6 +70,7 @@ class ReportCollection {
     this.interactionAverage = null
     this.projects = {}
     this.demos = {}
+    this.locations = {}
   }
 
 }
