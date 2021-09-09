@@ -4,7 +4,7 @@ class ReadableResponse {
 
   summary() {
     return `
-    coffeedust.io has received ${this.reports.uniqueVisits} unique visits so far,\n
+    coffeedust.io has received ${this.reports.uniqueVisits} unique visits so far ${this.timeframe.keyword},\n
     With user interaction at an average of ${Math.round(this.reports.interactionAverage)} clicks,\n
     ------------\n
     Project details have been viewed ${this.reports.projects.totalClicks} times with ${this.reports.projects.mostViewed} being the most viewed,\n
