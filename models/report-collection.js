@@ -25,6 +25,7 @@ class ReportCollection {
     this.timeframe = timeframe
     this.uniqueVisits = null
     this.interactionAverage = null
+    this.projects = {}
   }
 
 }
