@@ -3,6 +3,9 @@ import moment from "moment"
 class Timeframe {
 
   constructor(timeframeKeyword) {
+
+    this.keyword = timeframeKeyword
+
     switch (timeframeKeyword) {
       case "today":
         this.from = moment().startOf('day')
