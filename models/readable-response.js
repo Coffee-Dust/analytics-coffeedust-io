@@ -15,11 +15,11 @@ class ReadableResponse {
   }
 
   static async generateForFormat(format, timeframe) {
-    const rr = new this(format, timeframe)
-    await rr.reports.runQueryStatisticDataMethods()
+    const readableResponse = new this(format, timeframe)
+    await readableResponse.reports.runQueryStatisticDataMethods()
 
-    if (typeof rr[rr.format] === 'function') {
-      return rr[rr.format]()
+    if (typeof readableResponse[readableResponse.format] === 'function') {
+      return readableResponse[readableResponse.format]()
     } else {
       throw new Error("<UnknownReadableResponseFormatRequested> Invalid/Unknown dataFormat. Check spelling and make sure it's in camelCase.")
     }
