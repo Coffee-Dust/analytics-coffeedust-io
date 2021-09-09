@@ -14,6 +14,34 @@ class ReportCollection {
     this.interactionAverage = sum / this.uniqueVisits
   }
 
+  async queryProjectStatistics() {
+    const reports = await sequelize.query(`
+    SELECT * FROM 'Reports'
+    ${this.timeframe.sqlQuery()} 
+    AND eventType = 'projectDetailsClick';`, {model: Report, mapToModel: true})
+
+    this.projects.totalClicks = reports.length
+
+    this.projects.mostViewed = (function() {
+      const nameToOccurances = {}
+      const mostViewed = {name: null, occurances: 0}
+
+      reports.forEach(report => {
+        const projectName = report.eventDetails.projectName
+
+        if (typeof nameToOccurances[projectName] === "number") {
+          let num = nameToOccurances[projectName] += 1
+          if (num > mostViewed.occurances) {
+            mostViewed.name = projectName; mostViewed.occurances = num
+          }
+        } else { nameToOccurances[report.eventDetails.projectName] = 1 }
+      })//endof foreach
+
+      return `${mostViewed.name} at ${mostViewed.occurances} clicks,`
+    })()
+  }
+
+
   async runQueryStatisticDataMethods() {
     // Automatic method invoker for instance methods that start with 'query'
     for (const methodName of Object.getOwnPropertyNames(this.constructor.prototype)) {
