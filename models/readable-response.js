@@ -1,22 +1,22 @@
-import ReportCollection from "./report-collection.js";
+import ReportsStatistics from "./reports-statistics.js";
 
 class ReadableResponse {
 
   summary() {
     return `
-    coffeedust.io has received ${this.reports.uniqueVisits} unique visits so far ${this.timeframe.keyword},\n
-    With user interaction at an average of ${Math.round(this.reports.interactionAverage)} clicks,\n
+    coffeedust.io has received ${this.stats.uniqueVisits} unique visits so far ${this.timeframe.keyword},\n
+    With user interaction at an average of ${Math.round(this.stats.interactionAverage)} clicks,\n
     ------------\n
-    Project details have been viewed ${this.reports.projects.totalClicks} times with ${this.reports.projects.mostViewed} being the most viewed,\n
-    ${this.reports.demos.totalStarts} project demo's have been started today and ${this.reports.demos.totalVisits} users went to demo.cd.io after starting,\n
+    Project details have been viewed ${this.stats.projects.totalClicks} times with ${this.stats.projects.mostViewed} being the most viewed,\n
+    ${this.stats.demos.totalStarts} project demo's have been started today and ${this.stats.demos.totalVisits} users went to demo.cd.io after starting,\n
     ------------\n
-    Users locations included: ${this.reports.locations.stateAndCountries.reduce((prev, curr)=> `${prev},\n${curr}`, "")}
+    Users locations included: ${this.stats.locations.stateAndCountries.reduce((prev, curr)=> `${prev},\n${curr}`, "")}
     `
   }
 
   static async generateForFormat(format, timeframe) {
     const readableResponse = new this(format, timeframe)
-    await readableResponse.reports.runQueryStatisticDataMethods()
+    await readableResponse.stats.getPropDataFromAllQueryMethods()
 
     if (typeof readableResponse[readableResponse.format] === 'function') {
       return readableResponse[readableResponse.format]()
@@ -28,7 +28,7 @@ class ReadableResponse {
   constructor(format, timeframe) {
     this.format = format
     this.timeframe = timeframe
-    this.reports = new ReportCollection(this.timeframe)
+    this.stats = new ReportsStatistics(this.timeframe)
   }
 
 }
