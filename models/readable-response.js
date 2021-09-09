@@ -3,7 +3,15 @@ import ReportCollection from "./report-collection.js";
 class ReadableResponse {
 
   summary() {
-
+    return `
+    coffeedust.io has received ${this.reports.uniqueVisits} unique visits so far,\n
+    With user interaction at an average of ${Math.round(this.reports.interactionAverage)} clicks,\n
+    ------------\n
+    Project details have been viewed ${this.reports.projects.totalClicks} times with ${this.reports.projects.mostViewed} being the most viewed,\n
+    ${this.reports.demos.totalStarts} project demo's have been started today and ${this.reports.demos.totalVisits} users went to demo.cd.io after starting,\n
+    ------------\n
+    Users locations included: ${this.reports.locations.stateAndCountries.reduce((prev, curr)=> `${prev},\n${curr}`, "")}
+    `
   }
 
   static async generateForFormat(format, timeframe) {
