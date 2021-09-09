@@ -1,6 +1,7 @@
 import express from 'express'
 import './db/sequelize-config.js'
 import ReportController from "./controllers/report-controller.js"
+import StatsController from './controllers/stats-controller.js'
 
 const app = express()
 const port = 420
