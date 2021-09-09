@@ -2,6 +2,7 @@ class AppController {
 
   constructor(req, res, action) {
     this.method = req.method
+    this.headers = req.headers
     this.action = action
     this.params = req.body
     this.response = res
