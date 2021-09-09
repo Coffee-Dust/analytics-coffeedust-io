@@ -1,4 +1,5 @@
 import sequelize from "../db/sequelize-config.js";
+import Report from "./report.js";
 
 class ReportCollection {
   // All property setting query method names must start with 'query'
