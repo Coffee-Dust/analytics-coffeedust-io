@@ -27,7 +27,8 @@ class ReadableResponse {
 
   constructor(format, timeframe) {
     this.format = format
-    this.reports = new ReportCollection(timeframe)
+    this.timeframe = timeframe
+    this.reports = new ReportCollection(this.timeframe)
   }
 
 }
