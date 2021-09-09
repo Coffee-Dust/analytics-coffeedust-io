@@ -1,7 +1,7 @@
 import sequelize from "../db/sequelize-config.js";
 import Report from "./report.js";
 
-class ReportCollection {
+class ReportsStatistics {
   // All property setting query method names must start with 'query'
 
   async queryUniqueVisitsAndInteractionCount() {
@@ -66,7 +66,7 @@ class ReportCollection {
   }
 
 
-  async runQueryStatisticDataMethods() {
+  async getPropDataFromAllQueryMethods() {
     // Automatic method invoker for instance methods that start with 'query'
     for (const methodName of Object.getOwnPropertyNames(this.constructor.prototype)) {
       if (methodName.slice(0, 5) === "query") { await this[methodName]() }
@@ -83,4 +83,4 @@ class ReportCollection {
   }
 
 }
-export default ReportCollection
+export default ReportsStatistics
