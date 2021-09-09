@@ -13,6 +13,7 @@ class StatsController extends AppController {
   checkReqAPIKey() {
     if (!this.headers["api-key"] || this.headers["api-key"] !== process.env.ANALYTICS_CD_IO_STATS_API_KEY) {
       this.response.status = 403
+      this.response.send("<InvalidApiKey> The header apikey is missing or incorrect!")
       throw new Error("<InvalidApiKey> The header apikey is missing or incorrect!")
     }
   }
