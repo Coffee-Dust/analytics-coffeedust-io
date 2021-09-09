@@ -42,6 +42,10 @@ class ReportCollection {
     })()
   }
 
+  async queryDemoStatistics() {
+
+  }
+
 
   async runQueryStatisticDataMethods() {
     // Automatic method invoker for instance methods that start with 'query'
