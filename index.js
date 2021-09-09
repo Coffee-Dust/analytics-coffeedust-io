@@ -7,8 +7,8 @@ const app = express()
 const port = 420
 app.use(express.json());
 
+//Cors Setup:
 app.use(function (req, res, next) {
-
   const allowedOrigins = [
     "https://coffeedust.io",
     "http://localhost:3000"
