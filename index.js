@@ -30,6 +30,10 @@ app.post('/report', (req, res) => {
   new ReportController(req, res, "create")
 })
 
+app.post('/stats', (req, res)=> {
+  new StatsController(req, res, "index")
+})
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
