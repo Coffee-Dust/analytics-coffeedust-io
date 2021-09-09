@@ -56,6 +56,15 @@ class ReportCollection {
     this.demos.totalVisits = visitedDemos.length
   }
 
+  async queryLocationStatistics() {
+    const [regionAndCountryData, _] = await sequelize.query(`
+    SELECT region, countryName FROM 'Reports'
+    ${this.timeframe.sqlQuery()}
+    GROUP BY region, countryName;`)
+
+    this.locations.stateAndCountries = regionAndCountryData.map(obj=> `${obj.region}, ${obj.countryName}`)
+  }
+
 
   async runQueryStatisticDataMethods() {
     // Automatic method invoker for instance methods that start with 'query'
