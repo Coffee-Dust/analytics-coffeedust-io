@@ -38,7 +38,7 @@ class ReportCollection {
         } else { nameToOccurances[report.eventDetails.projectName] = 1 }
       })//endof foreach
 
-      return `${mostViewed.name} at ${mostViewed.occurances} clicks,`
+      return `${mostViewed.name} at ${mostViewed.occurances} views,`
     })()
   }
 
